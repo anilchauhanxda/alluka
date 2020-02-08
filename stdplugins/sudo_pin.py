@@ -1,5 +1,5 @@
 """Pins the replied message
-Syntax: .pin [LOUD]
+Syntax: .cpin [LOUD]
 For SUDO users
 Customized by: @meanii
 """
@@ -8,7 +8,7 @@ from telethon.tl import functions, types
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("pin ?(.*)",allow_sudo=True))
+@borg.on(admin_cmd("cpin ?(.*)",allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
