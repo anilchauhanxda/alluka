@@ -30,10 +30,9 @@ async def _(event):
           except YouBlockedUserError: 
               await event.reply("```Please unblock thiz bot (@allukabot)```")
               return
-          if response.text.startswith("I'm"):
+          if response.text.startswith(" "):
              await event.edit("I'm **αℓℓυкα Zᴏʟᴅʏᴄᴋ™** 👨🏻‍💻")
-          if response.text.startswith("Hi"):
-             await event.edit("haye!! there, I'm **αℓℓυкα Zᴏʟᴅʏᴄᴋ™** 👨🏻‍💻")
+          
           
           else: 
              #await event.delete()
