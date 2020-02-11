@@ -89,7 +89,7 @@ async def who(event):
         message_id_to_reply = None
 
     try:
-        await event.send_message(caption)
+        await event.reply(caption)
         await event.delete()
 
     except:
