@@ -1,12 +1,16 @@
 """Rename Telegram Files
 Syntax:
-.rnupload file.name
+.rnupload file.name (FOR ALL USERS)
 .rnstreamupload file.name
-By @Ck_ATR"""
+By @Ck_ATR
+Customized by @meanii 
+Please Don't remove credit name 
+"""
 
 import asyncio
 import time
 from datetime import datetime
+from telethon import events
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 import math
@@ -94,15 +98,15 @@ async def _(event):
     else:
         await mone.edit("Incorrect URL\n {}".format(input_str))
 
-
-@borg.on(admin_cmd(pattern="rnupload (.*)", allow_sudo=True))
+@borg.on(events.NewMessage(pattern=r"\.rnupload ?(.*)",incoming = True))
+@borg.on(admin_cmd(pattern="rnupload ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
     thumb = None
     if os.path.exists(thumb_image_path):
         thumb = thumb_image_path
-    await event.edit("Rename & Upload in process 🙄🙇‍♂️🙇‍♂️🙇‍♀️ It might take some time if file size is big")
+    meanii = await event.reply("Rename & Upload in process 🙄🙇‍♂️🙇‍♂️🙇‍♀️ It might take some time if file size is big")
     input_str = event.pattern_match.group(1)
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
@@ -139,11 +143,11 @@ async def _(event):
             end_two = datetime.now()
             os.remove(downloaded_file_name)
             ms_two = (end_two - end).seconds
-            await event.edit("Downloaded in {} seconds. Uploaded in {} seconds.".format(ms_one, ms_two))
+            await meanii.edit("Downloaded in {} seconds. Uploaded in {} seconds.".format(ms_one, ms_two))
         else:
-            await event.edit("File Not Found {}".format(input_str))
+            await event.reply("File Not Found {}".format(input_str))
     else:
-        await event.edit("Syntax // .rnupload file.name as reply to a Telegram media")
+        await event.reply("Syntax // .rnupload file.name as reply to a Telegram media")
 
 
 @borg.on(admin_cmd(pattern="rnstreamupload (.*)", allow_sudo=True))
