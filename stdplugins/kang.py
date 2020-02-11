@@ -54,8 +54,8 @@ KANGING_STR = [
 
 ]
 
-@borg.on(admin_cmd(pattern="guu ?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\.guu ?(.*)",incoming=True))
+@borg.on(admin_cmd(pattern="kang ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.kang ?(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
