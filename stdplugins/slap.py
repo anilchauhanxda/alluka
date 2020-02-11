@@ -1,14 +1,18 @@
 """
 SLAP Plugin For Userbot
 usage:- .slap in reply to any message, or u gonna slap urself.
-
+For for Users only
+customized by @meanii 
+Please Don't remove credit name 
 """
 
 import sys
 from telethon import events, functions
 from uniborg.util import admin_cmd
 import random
+import sys
 from telethon.tl.functions.users import GetFullUserRequest
+from sql_helpers.global_variables_sql import LOGGER, SUDO_USERS
 from telethon.tl.types import MessageEntityMentionName
 
 
@@ -72,7 +76,8 @@ HIT = [
     "smacks",
     "bashes",
 ]
-@borg.on(admin_cmd(pattern="slap ?(.*)", allow_sudo=True))
+@borg.on(admin_cmd(pattern="slap ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.slap ?(.*)",incoming=True))
 async def who(event):
     if event.fwd_from:
         return
@@ -84,10 +89,11 @@ async def who(event):
         message_id_to_reply = None
 
     try:
-        await event.edit(caption)
+        await event.send_message(caption)
+        await event.delete()
 
     except:
-        await event.edit("`Can't slap this nibba !!`")
+        await event.send_message("`Can't slap this nibba !!`")
 
 async def get_user(event):
     if event.reply_to_msg_id:
@@ -115,7 +121,7 @@ async def get_user(event):
             replied_user = await event.client(GetFullUserRequest(user_object.id))
 
         except (TypeError, ValueError):
-            await event.edit("`I don't slap strangers !!`")
+            await event.send_message("`I don't slap strangers !!`")
             return None
 
     return replied_user
