@@ -98,9 +98,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                         "📼Instagram📼", "https://www.instagram.com/mitshuhataki")],
                     [custom.Button.url("👨‍💻Website👨‍💻", "https://gizmostuffgstuff.blogspot.com"), custom.Button.url(
                         "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fzoldyckfamily%2Fzoldyck&template=https%3A%2F%2Fgithub.com%2Fzoldyckfamily%2Fzoldyck")],
-                    [custom.Button.url("🌚Youtube Channel🌚", "https://www.youtube.com/channel/UC6FsUGrV-fJtWqRykYfJscg"), custom.Button.url(
-                        "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
-                        "♻️Refresh Heroku♻️", "tg://idk")]
+                    [custom.Button.url("🌚Youtube Channel🌚", "https://www.youtube.com/channel/UC6FsUGrV-fJtWqRykYfJscg")]
                 ],
                 link_preview=True
             )
