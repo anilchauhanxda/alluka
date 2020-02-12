@@ -480,7 +480,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[alluka's](tg://need_update_for_some_feature/) , Sex Installed To Allukabot**\n"
+    OUTPUT = f"**[alluka's](tg://need_update_for_some_feature/) , Sex Installed To allukabot**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -522,7 +522,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , Telegram Installed To PepeBot**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , Telegram Installed To allukabot**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -562,7 +562,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , PIP Installed To Your PepeBot...**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , PIP Installed To Your allukabot...**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -603,7 +603,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , PIP Installed To Your PepeBot...**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , PIP Installed To Your allukabot...**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -643,7 +643,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , Name generator for Your PepeBot...**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , Name generator for Your allukabot...**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -682,7 +682,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , fast.com for Your PepeBot...**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , fast.com for Your allukabot...**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -721,7 +721,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , password generator for Your PepeBot...**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , password generator for Your allukabot...**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -760,7 +760,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , fortune teller for Your PEPÉBØT...**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , fortune teller for Your allukabot...**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -800,7 +800,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , dad jokes for Your PepeBot...**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , dad jokes for Your allukabot...**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -839,7 +839,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , quotes for Your PepeBot...**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , quotes for Your allukabot...**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
@@ -878,7 +878,7 @@ async def _(event):
     process = await asyncio.create_subprocess_shell(
         cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
     )
-    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , fake id generator for Your PepeBot...**\n"
+    OUTPUT = f"**[allukabot's](tg://need_update_for_some_feature/) , fake id generator for Your allukabot...**\n"
     stdout, stderr = await process.communicate()
     if len(stdout) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(stdout)) as out_file:
