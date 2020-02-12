@@ -97,7 +97,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                     [custom.Button.url("👨‍💻Website👨‍💻", "https://gizmostuffgstuff.blogspot.com")], custom.Button.url(
                         "🎵 Songs lib🎵", "https://telegram.dog/songsxd/547")],
                     [custom.Button.url("🌚Youtube Channel🌚", "https://www.youtube.com/channel/UC6FsUGrV-fJtWqRykYfJscg")]
-                ],
+                ]
                 link_preview=True
             )
         await event.answer([result] if result else None)
