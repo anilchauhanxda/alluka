@@ -14,6 +14,7 @@ import coffeehouse as cf
 
 import asyncio
 import io
+import random
 from sql_helpers.lydia_ai_sql import get_s, get_all_s, add_s, remove_s
 from time import time
 from uniborg.util import admin_cmd
@@ -36,26 +37,26 @@ async def lydia_disable_enable(event):
         reply_msg = await event.get_reply_message()
         user_id = reply_msg.from_id
         chat_id = event.chat_id
-        await event.edit("hm")
+        await event.edit("hoi :)")
         if input_str == "e":
             session = api_client.create_session()
             logger.info(session)
             logger.info(add_s(user_id, chat_id, session.id, session.expires))
-            await event.edit(f"hmm")
+            await event.edit(f"hi :)")
         elif input_str == "d":
             logger.info(remove_s(user_id, chat_id))
-            await event.edit(f"[__**signal lost**__](tg://user?id={user_id})")
+            await event.edit(f"__signal lost__")
         elif input_str == "l":
             lsts = get_all_s()
             if len(lsts) > 0:
-                output_str = "AI enabled users:\n\n"
+                output_str = "Lydia AI enabled users:\n\n"
                 for lydia_ai in lsts:
                     output_str += f"[user](tg://user?id={lydia_ai.user_id}) in chat `{lydia_ai.chat_id}`\n"
             else:
                 output_str = "no Lydia AI enabled users / chats. Start by replying `.enacf` to any user in any chat!"
             if len(output_str) > Config.MAX_MESSAGE_SIZE_LIMIT:
                 with io.BytesIO(str.encode(output_str)) as out_file:
-                    out_file.name = "lydia_ai.text"
+                    out_file.name = "@r4v4n4_lydia_ai.text"
                     await event.client.send_file(
                         event.chat_id,
                         out_file,
@@ -106,8 +107,8 @@ async def on_new_message(event):
             # Try to think a thought.
             try:
                 async with event.client.action(event.chat_id, "typing"):
-                    await asyncio.sleep(5)
+                    await asyncio.sleep(random.randint(6, 10))
                     output = api_client.think_thought(session_id, query)
-                    await event.reply(output)
+                    await event.reply("💫"+output)
             except cf.exception.CoffeeHouseError as e:
                 logger.info(str(e))
