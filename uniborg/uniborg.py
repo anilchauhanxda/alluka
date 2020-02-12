@@ -38,8 +38,8 @@ class Uniborg(TelegramClient):
         kwargs = {
             "api_id": 6,
             "api_hash": "eb06d4abfb49dc3eeb1aeb98ae0f581e",
-            "device_model": "Anii's Ubuntu",
-            "app_version": "@kaitoxd",
+            "device_model": "@meanii's Ubuntu",
+            "app_version": "@allukabot",
             "lang_code": "en",
             **kwargs
         }
@@ -129,7 +129,7 @@ class Uniborg(TelegramClient):
         del self._plugins[shortname]
         self._logger.info(f"Removed plugin {shortname}")
         
-        self._logger.info(f"Anii , Here we go!!")
+        self._logger.info(f"Anii , Here you go!!")
         
     
     def await_event(self, event_matcher, filter=None):
