@@ -1,8 +1,4 @@
-"""Personal Message Spammer
-Available Commands:
-.approvepm
-.blockpm
-.listapprovedpms"""
+
 import asyncio
 import json
 from telethon import events
@@ -15,10 +11,10 @@ borg.storage.PM_WARNS = {}
 borg.storage.PREV_REPLY_MESSAGE = {}
 
 
-BAALAJI_TG_USER_BOT = "My Master hasn't approved you to PM."
-TG_COMPANION_USER_BOT = "Please wait for his response and don't spam his PM."
-UNIBORG_USER_BOT_WARN_ZERO = "You are Spamming my Master's PM, So you are blocked by me. \nNow wait, Until my Master Unblocks you." 
-UNIBORG_USER_BOT_NO_WARN = "[──▄█▀█▄─────────██ \n▄████████▄───▄▀█▄▄▄▄ \n██▀▼▼▼▼▼─▄▀──█▄▄ \n█████▄▲▲▲─▄▄▄▀───▀▄ \n██████▀▀▀▀─▀────────▀▀] \n\nBleep Blop! This is a Bot. Don't Freak xD. \n\nMy Master hasn't approved you to PM yet. Please wait for my Great Master to look in, He mostly approves PMs.\n\nUntil then, please don't spam my King's PM, you'll get blocked and reported!"
+BAALAJI_TG_USER_BOT = "Tap on this 👉🏻`.alluka zoldyck` and paste it."
+TG_COMPANION_USER_BOT = "Please wait!! tap on this 👉🏻`.alluka zoldyck` and paste it."
+UNIBORG_USER_BOT_WARN_ZERO = "You are Spamming here, So you are blocked by me. \nNow wait, Until my Master Unblocks you." 
+UNIBORG_USER_BOT_NO_WARN = "Haye, You are human!?🧐 \n If you are send me `.alluka zoldyck`\n⚠️If you are trying too much times you may be block by me."
 
 
 
@@ -54,7 +50,8 @@ async def monito_p_m_s(event):
             borg.storage.PREV_REPLY_MESSAGE[chat.id] = r
 
 
-@borg.on(admin_cmd("approvepm ?(.*)"))
+@borg.on(admin_cmd(".alluka ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.alluka  ?(.*)",incoming=True))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -69,7 +66,7 @@ async def approve_p_m(event):
                     await borg.storage.PREV_REPLY_MESSAGE[chat.id].delete()
                     del borg.storage.PREV_REPLY_MESSAGE[chat.id]
                 approve(chat.id, reason)
-                await event.edit("[──███▅▄▄▄▄▄▄▄▄▄\n─██▐████████████\n▐█▀████████████▌▌\n▐─▀▀▀▐█▌▀▀███▀█─▌\n▐▄───▄█───▄█▌▄█](t.me/NeoMatrix90) \n\n My Master Has Approved You To PM Me...")
+                await event.reply("Haye, I'm **αℓℓυкα Zᴏʟᴅʏᴄᴋ™** 👨🏻‍💻\nTo get more info about me `.info` and for help `.help`")
                 await asyncio.sleep(3)
                 await event.delete()
 
@@ -84,7 +81,7 @@ async def approve_p_m(event):
         if event.is_private:
             if is_approved(chat.id):
                 disapprove(chat.id)
-                await event.edit("███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\nFuck Off Bitch, Now You Can't Message Me...")
+                await event.edit("███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\nNow You Can't Message Me...")
                 await asyncio.sleep(3)
                 await borg(functions.contacts.BlockRequest(chat.id))
 
