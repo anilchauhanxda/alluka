@@ -79,7 +79,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         elif query.startswith("meanii"):
             result = builder.article(
                 "@meanii: Noob/xD 👨🏻‍💻",
-                text=f"[meanii](https://telegra.ph/file/e024abfbdc070871b0210.mp4)",
+                text=f"[meanii](https://telegra.ph/file/dff89307eb7ee61c4b9b2.mp4)",
                 buttons=[],
                 link_preview=True
             )
@@ -87,15 +87,15 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             result = builder.article(
                 "© @meanii",
                 text="""
-**@allukabot specially customized for used sudo and normal users **
+**@allukabot specially customized for used SUDO and NORMAL users **
 **customized by: @meanii**
-**ZoldyckFamily™:**  [⠀](https://telegra.ph/file/e024abfbdc070871b0210.mp4)
+**ZoldyckFamily™**  [⠀](https://telegra.ph/file/dff89307eb7ee61c4b9b2.mp4)
 **Custom Built Fork:** https://github.com/mitshuhataki/kaito/""",
                 buttons=[
                     [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/meanii"), custom.Button.url(
                         "📼Instagram📼", "https://www.instagram.com/mitshuhataki")],
-                    [custom.Button.url("👨‍💻Website👨‍💻", "https://gizmostuffgstuff.blogspot.com"), custom.Button.url(
-                        "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fzoldyckfamily%2Fzoldyck&template=https%3A%2F%2Fgithub.com%2Fzoldyckfamily%2Fzoldyck")],
+                    [custom.Button.url("👨‍💻Website👨‍💻", "https://gizmostuffgstuff.blogspot.com")], custom.Button.url(
+                        "🎵 Songs lib🎵", "https://telegram.dog/songsxd/547")],
                     [custom.Button.url("🌚Youtube Channel🌚", "https://www.youtube.com/channel/UC6FsUGrV-fJtWqRykYfJscg")]
                 ],
                 link_preview=True
