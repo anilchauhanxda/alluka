@@ -56,7 +56,7 @@ async def lydia_disable_enable(event):
                 output_str = "no Lydia AI enabled users / chats. Start by replying `.enacf` to any user in any chat!"
             if len(output_str) > Config.MAX_MESSAGE_SIZE_LIMIT:
                 with io.BytesIO(str.encode(output_str)) as out_file:
-                    out_file.name = "@r4v4n4_lydia_ai.text"
+                    out_file.name = "@allukabot_lydia_ai.text"
                     await event.client.send_file(
                         event.chat_id,
                         out_file,
