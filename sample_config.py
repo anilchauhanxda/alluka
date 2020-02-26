@@ -83,7 +83,7 @@ class Config(object):
     NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD = int(os.environ.get("NO_OF_BUTTONS_DISPLAYED_IN_H_ME_CMD", 5))
     # specify command handler that should be used for the plugins
     # this should be a valid "regex" pattern
-    COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", "\.")
+    COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", "\!")
     # specify list of users allowed to use bot
     # WARNING: be careful who you grant access to your bot.
     # malicious users could do ".exec rm -rf /*"
@@ -136,7 +136,7 @@ class Config(object):
     MIRROR_ACE_API_KEY = os.environ.get("MIRROR_ACE_API_KEY", None)
     MIRROR_ACE_API_TOKEN = os.environ.get("MIRROR_ACE_API_TOKEN", None)
     #
-    RAVANA_LEELA = os.environ.get("RAVANA_LEELA", None)
+    ALLUKA_BOT = os.environ.get("ALLUKA_BOT", None)
     # spotify stuff
     DEFAULT_BIO = os.environ.get("DEFAULT_BIO",None)
     SPOTIFY_BIO_PREFIX = os.environ.get("SPOTIFY_BIO_PREFIX",None)
