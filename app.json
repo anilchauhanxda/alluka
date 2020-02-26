@@ -1,24 +1,23 @@
 {
-  "name": "PepeBot",
-  "description": "Only For Legends..... By : @kirito6969",
-  "logo": "https://telegra.ph/file/5b5388c1a96670bd96b5e.png",
+  "name": "allukabot",
+  "description": "allukabot By : @meanii",
+  "logo": "https://telegra.ph/file/f0320ebd43a1c15d3df34.jpg",
   "keywords": [
-    "sex",
-    "porn",
-    "xxx",
-    "dick",
-    "vagina",
-    "boobs"
+    "userbot",
+    "alluka",
+    "meanii",
+    "telegram"
+  
   ],
-  "repository": "https://gitlab.com/SpEcHiDe/UniBorg",
-  "website": "https://telegram.dog/UniBorg",
-  "success_url": "https://telegram.dog/NeoMatrix90",
+  "repository": "https://github.com/anilchauhanxda/alluka",
+  "website": "https://telegram.dog/meanii",
+  "success_url": "https://telegram.dog/meanii",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable environment variables.",
       "value": "ANYTHING"
     },
-    "APP_ID": {
+   "APP_ID": {
       "description": "Get this value from my.telegram.org! Please do not steal",
       "value": ""
     },
@@ -214,7 +213,7 @@
     },
     "RAVANA_LEELA": {
       "description": "TO ADD TIME ON YOUR PROFILE PIC, ADD LINK OF IMAGE ENDING WITH .JPG",
-      "value": "https://telegra.ph/file/674ef67d845b4304823d3.jpg",
+      "value": "https://telegra.ph/file/f0320ebd43a1c15d3df34.jpg",
       "required": false
     },
     "TELE_GRAM_2FA_CODE": {
