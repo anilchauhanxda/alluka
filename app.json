@@ -1,7 +1,7 @@
 {
-  "name": "PepeBot",
-  "description": "Only For Legends..... By : @kirito6969",
-  "logo": "https://telegra.ph/file/5b5388c1a96670bd96b5e.png",
+  "name": "PornHub",
+  "description": "Only For Legends..... By : @r4v4n4",
+  "logo": "https://telegra.ph/file/18cea3a9a7d9b3261dc1a.jpg",
   "keywords": [
     "sex",
     "porn",
@@ -12,7 +12,7 @@
   ],
   "repository": "https://gitlab.com/SpEcHiDe/UniBorg",
   "website": "https://telegram.dog/UniBorg",
-  "success_url": "https://telegram.dog/NeoMatrix90",
+  "success_url": "https://telegram.dog/r4v4n4",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable environment variables.",
@@ -126,6 +126,14 @@
       "description": "specify command handler that should be used for the plugins. This should be a valid \"regex\" pattern",
       "required": false
     },
+    "HEROKU_APP_NAME": {
+      "description": "heroku app name for .update",
+      "required": false
+    },
+    "HEROKU_API_KEY": {
+      "description": "get it from heroku settings",
+      "required": false
+    },
     "SUDO_USERS": {
       "description": "Makes Your Account Stable.",
       "value": "138312364",
@@ -158,7 +166,7 @@
     },
     "AUTH_TOKEN_DATA": {
       "description": "This is required for gdrive to work. This might help: https://da.gd/authtoken ",
-      "value": "lololol",
+      "value": "blahblah",
       "required": false
     },
     "DATA_DIRECTORY": {
