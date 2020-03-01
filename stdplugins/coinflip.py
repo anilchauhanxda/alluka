@@ -5,7 +5,7 @@ import random, re
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("coin ?(.*)"))
+@borg.on(admin_cmd("coinflip ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -15,17 +15,17 @@ async def _(event):
         input_str = input_str.lower()
     if r % 2 == 1:
         if input_str == "heads":
-            await event.edit("The coin landed on: **Heads**. \n You were correct.")
+            await borg.send_message(event.chat_id, "The coin landed on: **Heads**. \n You were correct.")
         elif input_str == "tails":
-            await event.edit("The coin landed on: **Heads**. \n You weren't correct, try again ...")
+            await borg.send_message(event.chat_id, "The coin landed on: **Heads**. \n You weren't correct, try again ...")
         else:
-            await event.edit("The coin landed on: **Heads**.")
+            await borg.send_message(event.chat_id, "The coin landed on: **Heads**.")
     elif r % 2 == 0:
         if input_str == "tails":
-            await event.edit("The coin landed on: **Tails**. \n You were correct.")
+            await borg.send_message(event.chat_id, "The coin landed on: **Tails**. \n You were correct.")
         elif input_str == "heads":
-            await event.edit("The coin landed on: **Tails**. \n You weren't correct, try again ...")
+            await borg.send_message(event.chat_id, "The coin landed on: **Tails**. \n You weren't correct, try again ...")
         else:
-            await event.edit("The coin landed on: **Tails**.")
+            await borg.send_message(event.chat_id, "The coin landed on: **Tails**.")
     else:
-        await event.edit("¯\_(ツ)_/¯")
+        await borg.send_message(event.chat_id, "¯\_(ツ)_/¯")
