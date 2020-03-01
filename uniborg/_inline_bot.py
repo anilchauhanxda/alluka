@@ -66,77 +66,60 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == borg.uid and query.startswith("@UniBorg"):
+        if event.query.user_id == borg.uid and query.startswith("@meanii"):
             rev_text = query[::-1]
             buttons = paginate_help(0, borg._plugins, "helpme")
             result = builder.article(
-                "© @UniBorg",
+                "© @meanii",
                 text="{}\nℂ𝕦𝕣𝕣𝕖𝕟𝕥𝕝𝕪 𝕃𝕠𝕒𝕕𝕖𝕕 ℙ𝕝𝕦𝕘𝕚𝕟𝕤: {}".format(
                     query, len(borg._plugins)),
                 buttons=buttons,
                 link_preview=True
             )
-        elif query.startswith("choot"):
+        elif query.startswith("meanii"):
             result = builder.article(
-                "@r4v4n4: Bhagwaan Sabko GF De",
-                text=f"[Choot](https://telegra.ph/file/019a2eab3d66d39c92a75.mp4)",
+                "@meanii",
+                text=f"[meanii](https://telegra.ph/file/70c182d7359af53ac3812.mp4)",
                 buttons=[],
                 link_preview=True
             )
-        elif query.startswith("bhoot"):
+        elif query.startswith("allukabot"):
             result = builder.article(
-                "@r4v4n4: Bhagwaan Sabko GF De",
-                text=f"[bhoot](https://da.gd/ovpt5)",
+                "@meanii",
+                text=f"[alluka](https://da.gd/OM99l5)",
                 buttons=[],
                 link_preview=True
             )
         elif query.startswith("repo"):
             result = builder.article(
-                "@r4v4n4: yeh hai button deploy kar le",
-                text=f"Ganja Sutta on the floor",
+                "@rmeanii: Deploy it",
+                text=f"Deply current repo",
                 buttons=[
-                    [custom.Button.url("👤Click on the button to deploy pornhub repo👤", "https://github.com/ravana69/Pornhub")],
+                    [custom.Button.url("👤Click on the button to deploy repo👤", "https://github.com/anilchauhanxda/alluka")],
                 ],
                 link_preview=True
             )
         elif query.startswith("imdb"):
             result = builder.article(
-                "@r4v4n4: IMDB",
-                text="""**Title:** Choot Ki Raani (1969)
-**Rating ⭐️:** 10 / 10
-(5.5 based on 7,610 user ratings) | U | 0h 69min |
-**Release Info:** 14 Feb 1969 (India)
-**Genre:** 🌋 #Adventure 🤣 #Comedy #Family
-**Language:**  #Bhojpuri #English
-**Country of Origin:**  #India
-**Story Line:** A young man Ravana moves from Bihar to Florida with his dick, where he's compelled to engage in a sux to protect a population of endangered Choots.
-**Director:** Ravana @r4v4n4
-**Writers:** Ravana @r4v4n4
-**Stars:**  Ravana @r4v4n4
-[Read More ...](https://da.gd/qGtPI)""",
+                "@meanii",
+                text=""" """,
                 buttons=[
-                    [custom.Button.url("Open On IMDB ▶️", "https://da.gd/o5Yy")]
+                    [custom.Button.url("Open On IMDB ▶️", "")]
                 ],
                 link_preview=True
                 )
         else:
             result = builder.article(
-                "© @UniBorg",
-                text="""@r4v4n4 **( Custom Built By** @r4v4n4 **)** 
-**Verified Account:** ✅
-**Official Website:** https://ravanaisdrunk.site.live [⠀](https://telegra.ph/file/b0604ea53360cd3858ec5.mp4)
-**Pithun 3.7.4 (default, Sep 12 2019, 01:19:52)** 
-**[GCC 7.4.0]**
-**Talethrun 1.10.10**
-**Custom Built Fork:** https://github.com/ravana69/Pornhub""",
+                "© @meanii",
+                text="""
+
+**Official Website:** https://anilchauhanxda.github.io [⠀](https://telegra.ph/file/70c182d7359af53ac3812.mp4)""",
                 buttons=[
-                    [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/r4v4n4"), custom.Button.url(
-                        "📼Ravana Audio Memes📼", "https://t.me/tgaudiomemes")],
-                    [custom.Button.url("👨‍💻Source Code👨‍💻", "https://github.com/ravana69/Pornhub"), custom.Button.url(
-                        "❕❗Deploy Me❗❕", "https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F&template=https%3A%2F%2Fgithub.com%2Fravana69%2FPornHub%2F")],
-                    [custom.Button.url("🔰Update Fork🔰", "tg://need_update_for_some_feature"), custom.Button.url(
-                        "✳️Fork Boost✳️", "tg://some_unsupported_feature"), custom.Button.url(
-                        "♻️Refresh Heroku♻️", "tg://chutiya")]
+                    [custom.Button.url("👤Contact Creator👤", "https://telegram.dog/meanii"), custom.Button.url(
+                        "👻Website👻", "https://anilchauhan.github.io")],
+                    [custom.Button.url("🙃Instagram🙃", "https://www.instagram.com/mitshuhataki/")],
+                    [custom.Button.url("💙J-POP Radio-S💙", "https://mitshuhataki.github.io/"), custom.Button.url(
+                        "😌Wallpapers😌", "parawalls.github.io")]
                 ],
                 link_preview=True
             )
@@ -155,7 +138,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "⚠️ Warning: Don't Press Any Buttons ⚠️\n\nCustom Fork: https://github.com/ravana69/Pornhub\n\n\nNote: Bas kar BetiChod, Maa Ke Laude, Madarchod"
+            reply_pop_up_alert = "⚠️ Warning: Don't Press Any Buttons"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -173,7 +156,7 @@ if Config.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "Please get your own @UniBorg, and don't edit my messages!"
+            reply_pop_up_alert = "Please get your own userbot"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
 
