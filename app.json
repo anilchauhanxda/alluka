@@ -10,7 +10,7 @@
     "userbot",
     
   ],
-  "repository": "https://gitlab.com/anilchauhanxda/alluka",
+  "repository": "https://github.com/anilchauhanxda/alluka",
   "website": "https://telegram.dog/meanii",
   "success_url": "https://telegram.dog/allukabot",
   "env": {
