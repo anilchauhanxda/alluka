@@ -1,6 +1,6 @@
 """Urban Dictionary V2.0 
 For all user
-Syntax: .ud Query
+Syntax: .mean Query
 Made by @meanii 
 Please Don't remove credit name 
 """
@@ -11,8 +11,8 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from uniborg.util import admin_cmd
 
-@borg.on(admin_cmd(pattern="ud?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\.ud?(.*)",incoming=True))
+@borg.on(admin_cmd(pattern="mean?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.mean?(.*)",incoming=True))
 
 async def _(event):
     if event.fwd_from:
