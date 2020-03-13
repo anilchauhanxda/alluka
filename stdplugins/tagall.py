@@ -5,6 +5,7 @@ from telethon import events
 from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd("tagall($| .*)"))
+@borg.on(events.NewMessage(pattern=r"\.tagall (.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
