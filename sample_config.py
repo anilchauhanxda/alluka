@@ -56,7 +56,7 @@ class Config(object):
     LOAD = []
     # foloowing plugins won't work on Heroku,
     # Remove This To Make Them Work But Would Make Bot Unstable AF...⚡
-    NO_LOAD = [
+    NO_LOAD = [ "ignore"
                   
 ]
     # Get your own API key from https://www.remove.bg/ or
