@@ -16,7 +16,7 @@ gtts
 hachoir
 Pillow
 psycopg2
-betray
+#betray
 pySmartDL
 python-barcode
 python-magic
