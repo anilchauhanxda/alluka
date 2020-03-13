@@ -21,10 +21,10 @@ async def _(event):
     chat = "@rDanyBot"
     meanii = event.pattern_match.group(1)
 
-    async with borg.conversation("@rDanyBot") as conv:
+    async with borg.conversation("@LydiaChatBot") as conv:
           try:    
               
-              response = conv.wait_event(events.NewMessage(from_users=115719383))
+              response = conv.wait_event(events.NewMessage(from_users=869979136))
               await event.client.send_message(chat, meanii)
               response = await response 
           except YouBlockedUserError: 
