@@ -14,7 +14,7 @@ borg.storage.PREV_REPLY_MESSAGE = {}
 BAALAJI_TG_USER_BOT = "Tap on this 👉🏻`*alluka zoldyck` and paste it."
 TG_COMPANION_USER_BOT = "Please wait!! tap on this 👉🏻`*alluka zoldyck` and paste it."
 UNIBORG_USER_BOT_WARN_ZERO = "You are Spamming here, So you are blocked by me. \nNow wait, Until my Master Unblocks you." 
-UNIBORG_USER_BOT_NO_WARN = "Haye, You are human!?🧐 \n If you are send me `.alluka zoldyck`\n⚠️If you are trying too much times you may be block by me.\n ☝🏻 One tip for you tap on this 👉🏻'`.alluka zoldyck`' to copy."
+UNIBORG_USER_BOT_NO_WARN = "Haye, You are human!?🧐 \n If you are send me `*alluka zoldyck`\n⚠️If you are trying too much times you may be block by me.\n ☝🏻 One tip for you tap on this 👉🏻'`*alluka zoldyck`' to copy."
 
 
 
@@ -50,8 +50,8 @@ async def monito_p_m_s(event):
             borg.storage.PREV_REPLY_MESSAGE[chat.id] = r
 
 
-@borg.on(admin_cmd(".alluka ?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\.alluka  ?(.*)",incoming=True))
+@borg.on(admin_cmd("*alluka ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\*alluka  ?(.*)",incoming=True))
 async def approve_p_m(event):
     if event.fwd_from:
         return
