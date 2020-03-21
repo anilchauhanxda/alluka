@@ -1,7 +1,7 @@
 """Warn the users by replied message
-Syntax: `.warn` <Reason>
-        `.iswarn` by replying to know user got warn or not.
-        `.rwarn` to remove warns.
+Syntax: `*warn` <Reason>
+        `*iswarn` by replying to know user got warn or not.
+        `*rwarn` to remove warns.
 For SUDO users
 Customized by: @meanii
 """
