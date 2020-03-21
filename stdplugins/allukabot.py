@@ -1,5 +1,5 @@
 """ai bot
-Syntax: .ai Your message
+Syntax: *ai Your message
 Made by @meanii 
 Please Don't remove credit name 
 """
@@ -12,13 +12,13 @@ from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="ai ?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\.ai ?(.*)",incoming=True))
+@borg.on(events.NewMessage(pattern=r"\*ai ?(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return 
     
   
-    chat = "@rDanyBot"
+    chat = "@LydiaChatBot"
     meanii = event.pattern_match.group(1)
 
     async with borg.conversation("@LydiaChatBot") as conv:
