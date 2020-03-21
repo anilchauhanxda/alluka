@@ -1,6 +1,6 @@
 """
 Syntax:
-.insult(with reply user message)
+*insult(with reply user message)
 For for Users only
 customized by @meanii 
 Please Don't remove credit name 
@@ -19,7 +19,7 @@ import time
 
 
 @borg.on(admin_cmd(pattern="insult ?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\.insult(.*)",incoming=True))
+@borg.on(events.NewMessage(pattern=r"\*insult(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
