@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd(pattern="srgb (.*)"))
-@borg.on(events.NewMessage(pattern=r"\.srgb ?(.*)",incoming=True))
+@borg.on(events.NewMessage(pattern=r"\*srgb ?(.*)",incoming=True))
 async def sticklet(event):
     
     R = random.randint(0,256)
