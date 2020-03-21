@@ -8,11 +8,12 @@ import urbandict
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="ud ?(.*)"))
+@borg.on(admin_cmd(pattern="mean ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\*mean?(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("processing...")
+    meanii = await event.reply("processing...")
     str = event.pattern_match.group(1)
     if not str:
     	get = await event.get_reply_message()
@@ -31,6 +32,6 @@ async def _(event):
                 '__'
             )
         else:
-            await event.edit("No result found for **" + str + "**")
+            await meanii.edit("No result found for **" + str + "**")
     except:
-        await event.edit("No result found for **" + str + "**")
+        await meanii.edit("No result found for **" + str + "**")
