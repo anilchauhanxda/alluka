@@ -1,7 +1,7 @@
 """Greetings
 Commands:
 .clearwelcome
-.savewelcome <Welcome Message>"""
+.setwelcome <Welcome Message>"""
 
 from telethon import events, utils
 from telethon.tl import types
@@ -43,7 +43,7 @@ async def _(event):
             update_previous_welcome(event.chat_id, current_message.id)
 
 
-@borg.on(admin_cmd(pattern="savewelcome"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="setwelcome"))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
