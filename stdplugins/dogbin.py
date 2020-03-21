@@ -1,5 +1,5 @@
 """IX.IO pastebin like site
-Syntax: .paste"""
+Syntax: *paste"""
 import asyncio
 from datetime import datetime
 import os
@@ -22,7 +22,7 @@ async def _(event):
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     input_str = event.pattern_match.group(1)
-    message = "SYNTAX: `.paste <long text to include>`"
+    message = "SYNTAX: `*paste <long text to include>`"
     if input_str:
         message = input_str
     elif event.reply_to_msg_id:
