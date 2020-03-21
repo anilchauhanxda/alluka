@@ -7,8 +7,8 @@
 #
 #Userbot module for reverse searching stickers and images on Google
 #Thanks to PPE
-"""Type .reverse (any number) reply to a image
-\nPorted by © @NeoMatrix90"""
+"""Type *reverse (any number) reply to a image
+\n"""
 import io
 import asyncio
 import os
