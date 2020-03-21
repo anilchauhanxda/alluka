@@ -3,7 +3,7 @@ import asyncio
 import os
 import sys
 
-@borg.on(events.NewMessage(pattern=r"^.note (.*)", outgoing=True))
+@borg.on(admin_cmd("*note ?(.*)",allow_sudo=True))
 async def test(event):
     if event.fwd_from:
         return
