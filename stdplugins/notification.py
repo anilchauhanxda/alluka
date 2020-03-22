@@ -84,27 +84,6 @@ async def set_no_log_p_m(event):
                 await event.delete()
 
 
-@borg.on(admin_cmd(".alluka ?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\.alluka  ?(.*)",incoming=True))
-async def approve_p_m(event):
-    if event.fwd_from:
-        return
-    reason = event.pattern_match.group(1)
-    chat = await event.get_chat()
-    if Config.PM_LOGGR_BOT_API_ID is not None:
-        if event.is_private:
-            if not pmpermit_sql.is_approved(chat.id):
-                if chat.id in PM_WARNS:
-                    del PM_WARNS[chat.id]
-                if chat.id in PREV_REPLY_MESSAGE:
-                    await PREV_REPLY_MESSAGE[chat.id].delete()
-                    del PREV_REPLY_MESSAGE[chat.id]
-                pmpermit_sql.approve(chat.id, reason)
-                await event.edit("Haye, I'm **αℓℓυкα Zᴏʟᴅʏᴄᴋ™** 👨🏻‍💻\nTo get more info about me `*info` and for help `*help`")
-                await asyncio.sleep(3)
-                await event.delete()
-
-
 @borg.on(admin_cmd(pattern="blk($| )(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
