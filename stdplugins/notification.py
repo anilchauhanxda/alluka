@@ -1,10 +1,10 @@
-"""Notification Manager for @UniBorg
+"""Notification Manager 
 .nccreatedch
 .nolog
 .dellog
 .apm
 .bpm To block pm
-.blk To block faking retard nibba
+.blk To block 
 .listapprovedpms"""
 
 import asyncio
@@ -84,7 +84,8 @@ async def set_no_log_p_m(event):
                 await event.delete()
 
 
-@borg.on(admin_cmd(pattern="apm($| )(.*)"))
+@borg.on(admin_cmd(".alluka ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.alluka  ?(.*)",incoming=True))
 async def approve_p_m(event):
     if event.fwd_from:
         return
@@ -99,7 +100,7 @@ async def approve_p_m(event):
                     await PREV_REPLY_MESSAGE[chat.id].delete()
                     del PREV_REPLY_MESSAGE[chat.id]
                 pmpermit_sql.approve(chat.id, reason)
-                await event.edit("[──███▅▄▄▄▄▄▄▄▄▄\n─██▐████████████\n▐█▀████████████▌▌\n▐─▀▀▀▐█▌▀▀███▀█─▌\n▐▄───▄█───▄█▌▄█](t.me/kirito6969) \n\n My Master Has Approved You To PM Me...")
+                await event.edit("Haye, I'm **αℓℓυкα Zᴏʟᴅʏᴄᴋ™** 👨🏻‍💻\nTo get more info about me `*info` and for help `*help`")
                 await asyncio.sleep(3)
                 await event.delete()
 
@@ -114,10 +115,10 @@ async def approve_p_m(event):
         if event.is_private:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-                await event.edit("███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\nFuck Off Bitch, Now You Can't Message Me...")
+                await event.edit("You are Spamming here, So you are blocked by me. \nNow wait, Until my Master Unblocks you.")
                 await asyncio.sleep(10)
                 await borg(functions.contacts.BlockRequest(chat.id))
-                await event.edit("`For your Irriting Behaviour...\nMy mastor Blocked You..\nNow Go To HELL`")
+                await event.edit("`For your Irriting Behaviour...\nalluka Blocked You..\nNow Go To HELL`")
 
 
 @borg.on(admin_cmd(pattern="bpm($| )(.*)"))
@@ -138,7 +139,7 @@ async def approve_p_m(event):
     if event.fwd_from:
         return
     approved_users = pmpermit_sql.get_all_approved()
-    APPROVED_PMs = "[───────────────▄▄───▐█\n───▄▄▄───▄██▄──█▀───█─▄\n─▄██▀█▌─██▄▄──▐█▀▄─▐█▀\n▐█▀▀▌───▄▀▌─▌─█─▌──▌─▌\n▌▀▄─▐──▀▄─▐▄─▐▄▐▄─▐▄─▐▄] \n\nApproved PMs....\n"
+    APPROVED_PMs = "Alluka Approved PMs....\n"
     if len(approved_users) > 0:
         for a_user in approved_users:
             if a_user.reason:
