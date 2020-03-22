@@ -30,7 +30,7 @@ async def create_dump_channel(event):
     if Config.PM_LOGGR_BOT_API_ID is None:# || Config.PM_LOGGR_BOT_API_ID == -100:
         result = await borg(functions.channels.CreateChannelRequest(  # pylint:disable=E0602
             title=f"UniBorg-{borg.uid}-PM_LOGGR_BOT_API_ID-data",
-            about="@UniBorg PM_LOGGR_BOT_API_ID // Do Not Touch",
+            about="@allukabot PM_LOGGR_BOT_API_ID // Do Not Touch",
             megagroup=False
         ))
         logger.info(result)
