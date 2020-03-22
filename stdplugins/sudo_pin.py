@@ -1,5 +1,5 @@
 """Pins the replied message
-Syntax: *cpin [LOUD]
+Syntax: .cpin [LOUD]
 For SUDO users
 Customized by: @meanii
 """
