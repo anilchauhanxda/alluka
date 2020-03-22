@@ -1,6 +1,6 @@
 """
 Syntax:
-*exec <cmd>
+.exec <cmd>
 For SUDO Users only
 customized by @meanii 
 Please Don't remove credit name 
