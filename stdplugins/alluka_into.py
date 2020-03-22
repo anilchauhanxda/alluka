@@ -1,10 +1,10 @@
-"""Notification Manager for @UniBorg
+"""Notification 
 .nccreatedch
 .nolog
 .dellog
 .apm
 .bpm To block pm
-.blk To block faking retard nibba
+.blk To block
 .listapprovedpms"""
 
 import asyncio
@@ -19,10 +19,12 @@ PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
 
-BAALAJI_TG_USER_BOT = "Tap on this 👉🏻`*alluka zoldyck` and paste it."
-TG_COMPANION_USER_BOT = "Please wait!! tap on this 👉🏻`*alluka zoldyck` and paste it."
-UNIBORG_USER_BOT_WARN_ZERO = "You are Spamming here, So you are blocked by me. \nNow wait, Until my Master Unblocks you." 
-UNIBORG_USER_BOT_NO_WARN = "Haye, You are human!?🧐 \n If you are send me `*alluka zoldyck`\n⚠️If you are trying too much times you may be block by me.\n ☝🏻 One tip for you tap on this 👉🏻'`*alluka zoldyck`' to copy."
+
+BAALAJI_TG_USER_BOT = " "
+TG_COMPANION_USER_BOT = " "
+UNIBORG_USER_BOT_WARN_ZERO = " " 
+UNIBORG_USER_BOT_NO_WARN = " "
+
 
 
 
@@ -30,8 +32,8 @@ UNIBORG_USER_BOT_NO_WARN = "Haye, You are human!?🧐 \n If you are send me `*al
 async def create_dump_channel(event):
     if Config.PM_LOGGR_BOT_API_ID is None:# || Config.PM_LOGGR_BOT_API_ID == -100:
         result = await borg(functions.channels.CreateChannelRequest(  # pylint:disable=E0602
-            title=f"UniBorg-{borg.uid}-PM_LOGGR_BOT_API_ID-data",
-            about="@allukabot PM_LOGGR_BOT_API_ID // Do Not Touch",
+            title=f"alluka-{borg.uid}-PM_LOGGR_BOT_API_ID-data",
+            about="@Ualluka PM_LOGGR_BOT_API_ID // Do Not Touch",
             megagroup=False
         ))
         logger.info(result)
@@ -84,25 +86,7 @@ async def set_no_log_p_m(event):
                 await event.delete()
 
 
-@borg.on(admin_cmd(".alluka ?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\.alluka  ?(.*)",incoming=True))
-async def approve_p_m(event):
-    if event.fwd_from:
-        return
-    reason = event.pattern_match.group(1)
-    chat = await event.get_chat()
-    if Config.PM_LOGGR_BOT_API_ID is not None:
-        if event.is_private:
-            if not pmpermit_sql.is_approved(chat.id):
-                if chat.id in PM_WARNS:
-                    del PM_WARNS[chat.id]
-                if chat.id in PREV_REPLY_MESSAGE:
-                    await PREV_REPLY_MESSAGE[chat.id].delete()
-                    del PREV_REPLY_MESSAGE[chat.id]
-                pmpermit_sql.approve(chat.id, reason)
-                await event.edit("Haye, I'm **αℓℓυкα Zᴏʟᴅʏᴄᴋ™** 👨🏻‍💻\nTo get more info about me `*info` and for help `*help`")
-                await asyncio.sleep(3)
-                await event.delete()
+
 
 
 @borg.on(admin_cmd(pattern="blk($| )(.*)"))
@@ -115,53 +99,12 @@ async def approve_p_m(event):
         if event.is_private:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-                await event.edit("███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\nFuck Off Bitch, Now You Can't Message Me...")
+                await event.edit("Fuck Off Bitch, Now You Can't Message Me...")
                 await asyncio.sleep(10)
                 await borg(functions.contacts.BlockRequest(chat.id))
                 await event.edit("`For your Irriting Behaviour...\nI Blocked You..\nNow Go To HELL`")
 
 
-@borg.on(admin_cmd(pattern="bpm($| )(.*)"))
-async def approve_p_m(event):
-    if event.fwd_from:
-        return
-    reason = event.pattern_match.group(1)
-    chat = await event.get_chat()
-    if Config.PM_LOGGR_BOT_API_ID is not None:
-        if event.is_private:
-            if pmpermit_sql.is_approved(chat.id):
-                pmpermit_sql.disapprove(chat.id)
-                await event.edit("`PM's Blocked Successfully`")
-                await asyncio.sleep(40)
-                    
-@borg.on(admin_cmd(pattern="listapprovedpms"))
-async def approve_p_m(event):
-    if event.fwd_from:
-        return
-    approved_users = pmpermit_sql.get_all_approved()
-    APPROVED_PMs = "Alluka Approved PMs....\n"
-    if len(approved_users) > 0:
-        for a_user in approved_users:
-            if a_user.reason:
-                APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
-            else:
-                APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
-    else:
-        APPROVED_PMs = "no Approved PMs (yet)"
-    if len(APPROVED_PMs) > Config.MAX_MESSAGE_SIZE_LIMIT:
-        with io.BytesIO(str.encode(APPROVED_PMs)) as out_file:
-            out_file.name = "approved.pms.text"
-            await borg.send_file(
-                event.chat_id,
-                out_file,
-                force_document=True,
-                allow_cache=False,
-                caption="Current Approved PMs",
-                reply_to=event
-            )
-            await event.delete()
-    else:
-        await event.edit(APPROVED_PMs)
 
 
 @borg.on(events.NewMessage(incoming=True))
