@@ -1,10 +1,10 @@
-"""Notification Manager 
+"""Notification Manager for @UniBorg
 .nccreatedch
 .nolog
 .dellog
 .apm
 .bpm To block pm
-.blk To block 
+.blk To block faking retard nibba
 .listapprovedpms"""
 
 import asyncio
@@ -84,6 +84,27 @@ async def set_no_log_p_m(event):
                 await event.delete()
 
 
+@borg.on(admin_cmd(".alluka ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.alluka  ?(.*)",incoming=True))
+async def approve_p_m(event):
+    if event.fwd_from:
+        return
+    reason = event.pattern_match.group(1)
+    chat = await event.get_chat()
+    if Config.PM_LOGGR_BOT_API_ID is not None:
+        if event.is_private:
+            if not pmpermit_sql.is_approved(chat.id):
+                if chat.id in PM_WARNS:
+                    del PM_WARNS[chat.id]
+                if chat.id in PREV_REPLY_MESSAGE:
+                    await PREV_REPLY_MESSAGE[chat.id].delete()
+                    del PREV_REPLY_MESSAGE[chat.id]
+                pmpermit_sql.approve(chat.id, reason)
+                await event.edit("Haye, I'm **αℓℓυкα Zᴏʟᴅʏᴄᴋ™** 👨🏻‍💻\nTo get more info about me `*info` and for help `*help`")
+                await asyncio.sleep(3)
+                await event.delete()
+
+
 @borg.on(admin_cmd(pattern="blk($| )(.*)"))
 async def approve_p_m(event):
     if event.fwd_from:
@@ -94,10 +115,10 @@ async def approve_p_m(event):
         if event.is_private:
             if pmpermit_sql.is_approved(chat.id):
                 pmpermit_sql.disapprove(chat.id)
-                await event.edit("You are Spamming here, So you are blocked by me. \nNow wait, Until my Master Unblocks you.")
+                await event.edit("███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\nFuck Off Bitch, Now You Can't Message Me...")
                 await asyncio.sleep(10)
                 await borg(functions.contacts.BlockRequest(chat.id))
-                await event.edit("`For your Irriting Behaviour...\nalluka Blocked You..\nNow Go To HELL`")
+                await event.edit("`For your Irriting Behaviour...\nI Blocked You..\nNow Go To HELL`")
 
 
 @borg.on(admin_cmd(pattern="bpm($| )(.*)"))
@@ -143,6 +164,47 @@ async def approve_p_m(event):
         await event.edit(APPROVED_PMs)
 
 
+@borg.on(events.NewMessage(incoming=True))
+async def on_new_private_message(event):
+    if Config.PM_LOGGR_BOT_API_ID is None:
+        return
+
+    if not event.is_private:
+        return
+
+    message_text = event.message.message
+    message_media = event.message.media
+    message_id = event.message.id
+    message_to_id = event.message.to_id
+    chat_id = event.chat_id
+    # logger.info(chat_id)
+
+    current_message_text = message_text.lower()
+    if BAALAJI_TG_USER_BOT in current_message_text or \
+        TG_COMPANION_USER_BOT in current_message_text or \
+        UNIBORG_USER_BOT_NO_WARN in current_message_text:
+        # userbot's should not reply to other userbot's
+        # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
+        return
+
+    sender = await borg.get_entity(chat_id)
+    if chat_id == borg.uid:
+        # don't log Saved Messages
+        return
+    if sender.bot:
+        # don't log bots
+        return
+    if sender.verified:
+        # don't log verified accounts
+        return
+
+    if not pmpermit_sql.is_approved(chat_id):
+        # pm permit
+        await do_pm_permit_action(chat_id, event)
+
+    if not no_log_pms_sql.is_approved(chat_id):
+        # log pms
+        await do_log_pm_action(chat_id, message_text, message_media)
 
 
 @borg.on(events.ChatAction(blacklist_chats=Config.UB_BLACK_LIST_CHAT))
