@@ -1,5 +1,5 @@
 """Get Telegram Profile Picture and other information
-Syntax: *whois @username"""
+Syntax: .whois @username"""
 
 import html
 from telethon import events
@@ -11,7 +11,7 @@ from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd(pattern="whois ?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\*whois ?(.*)",incoming=True))
+@borg.on(events.NewMessage(pattern=r"\*.whois ?(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
