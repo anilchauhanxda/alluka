@@ -143,47 +143,6 @@ async def approve_p_m(event):
         await event.edit(APPROVED_PMs)
 
 
-@borg.on(events.NewMessage(incoming=True))
-async def on_new_private_message(event):
-    if Config.PM_LOGGR_BOT_API_ID is None:
-        return
-
-    if not event.is_private:
-        return
-
-    message_text = event.message.message
-    message_media = event.message.media
-    message_id = event.message.id
-    message_to_id = event.message.to_id
-    chat_id = event.chat_id
-    # logger.info(chat_id)
-
-    current_message_text = message_text.lower()
-    if BAALAJI_TG_USER_BOT in current_message_text or \
-        TG_COMPANION_USER_BOT in current_message_text or \
-        UNIBORG_USER_BOT_NO_WARN in current_message_text:
-        # userbot's should not reply to other userbot's
-        # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
-        return
-
-    sender = await borg.get_entity(chat_id)
-    if chat_id == borg.uid:
-        # don't log Saved Messages
-        return
-    if sender.bot:
-        # don't log bots
-        return
-    if sender.verified:
-        # don't log verified accounts
-        return
-
-    if not pmpermit_sql.is_approved(chat_id):
-        # pm permit
-        await do_pm_permit_action(chat_id, event)
-
-    if not no_log_pms_sql.is_approved(chat_id):
-        # log pms
-        await do_log_pm_action(chat_id, message_text, message_media)
 
 
 @borg.on(events.ChatAction(blacklist_chats=Config.UB_BLACK_LIST_CHAT))
