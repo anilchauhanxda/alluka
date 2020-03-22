@@ -1,8 +1,8 @@
 """ Google Translate
 Available Commands:
 For all users
-*tr LanguageCode as reply to a message
-*tr LangaugeCode | text to translate
+.tr LanguageCode as reply to a message
+.tr LangaugeCode | text to translate
 Made by @meanii 
 Please Don't remove credit name 
 """
