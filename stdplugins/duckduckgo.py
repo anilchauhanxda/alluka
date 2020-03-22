@@ -1,6 +1,6 @@
 """Duck Duck Go  
 For all users
-Syntax: *ddg Query
+Syntax: .ddg Query
 customized by @meanii 
 Please Don't remove credit name 
 """
@@ -12,7 +12,7 @@ import json
 from uniborg.util import admin_cmd
 
 @borg.on(admin_cmd(pattern="ddk?(.*)"))
-@borg.on(events.NewMessage(pattern=r"\*ddg?(.*)",incoming=True))
+@borg.on(events.NewMessage(pattern=r"\.ddg?(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
