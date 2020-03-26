@@ -6,6 +6,7 @@ from uniborg.util import admin_cmd
 
 
 @borg.on(admin_cmd("decide"))
+@borg.on(events.NewMessage(pattern=r"\.decide(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
