@@ -1,5 +1,7 @@
 """Get Administrators of any Chat*
-Syntax: .userlist"""
+Syntax: .userlist
+for all users 
+"""
 from telethon import events
 import os
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
@@ -7,12 +9,13 @@ from uniborg.util import admin_cmd
 from telethon.errors.rpcerrorlist import (UserIdInvalidError,
                                           MessageTooLongError)
                                           
-@borg.on(events.NewMessage(pattern=r"\.userlist ?(.*)", outgoing=True))
+@borg.on(admin_cmd(pattern="userlist"))
+@borg.on(events.NewMessage(pattern=r"\.userlist ?(.*)", incoming=True))
 async def get_users(show):
     """ For .userslist command, list all of the users of the chat. """
     if not show.text[0].isalpha() and show.text[0] not in ("/", "#", "@", "!"):
         if not show.is_group:
-            await show.edit("Are you sure this is a group?")
+            await show.reply("Are you sure this is a group?")
             return
         info = await show.client.get_entity(show.chat_id)
         title = info.title if info.title else "this chat"
@@ -34,9 +37,9 @@ async def get_users(show):
         except ChatAdminRequiredError as err:
             mentions += " " + str(err) + "\n"
         try:
-            await show.edit(mentions)
+            await show.reply_to(mentions)
         except MessageTooLongError:
-            await show.edit("Damn, this is a huge group. Uploading users lists as file.")
+            await show.reply("Damn, this is a huge group. Uploading users lists as file.")
             file = open("userslist.txt", "w+")
             file.write(mentions)
             file.close()
