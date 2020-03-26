@@ -50,7 +50,7 @@
     },
     "TMP_DOWNLOAD_DIRECTORY": {
       "description": "This is required for the plugins involving the file system.",
-      "value": "./ravana/",
+      "value": "./alluka/",
       "required": false
     },
     "IBM_WATSON_CRED_URL": {
