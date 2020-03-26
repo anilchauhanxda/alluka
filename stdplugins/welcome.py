@@ -43,7 +43,8 @@ async def _(event):
             update_previous_welcome(event.chat_id, current_message.id)
 
 
-@borg.on(admin_cmd(pattern="setwelcome"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="setwelcome"))
+@borg.on(events.NewMessage(pattern=r"\.setwelcome(.*)",incoming=True))  
 async def _(event):
     if event.fwd_from:
         return
@@ -56,16 +57,17 @@ async def _(event):
             silent=True
         )
         add_welcome_setting(event.chat_id, True, 0, msg_o.id)
-        await event.edit("Welcome note saved. ")
+        await event.reply("Welcome note saved. ")
 
 
-@borg.on(admin_cmd(pattern="clearwelcome"))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="clearwelcome")) 
+@borg.on(events.NewMessage(pattern=r"\.clearwelcome(.*)",incoming=True)) # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
     cws = get_current_welcome_settings(event.chat_id)
     rm_welcome_setting(event.chat_id)
-    await event.edit(
+    await event.reply(
         "Welcome note cleared. " + \
         "[This](https://t.me/c/{}/{}) was your previous welcome message.".format(
             str(Config.PRIVATE_CHANNEL_BOT_API_ID)[4:],
