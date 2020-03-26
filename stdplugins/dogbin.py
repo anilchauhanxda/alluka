@@ -1,11 +1,10 @@
-"""IX.IO pastebin like site
-Syntax: .paste"""
 import asyncio
 from datetime import datetime
 import os
 import requests
 from uniborg.util import admin_cmd
 import logging
+from telethon import events
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.WARN)
 
@@ -15,6 +14,7 @@ def progress(current, total):
 
 
 @borg.on(admin_cmd(pattern="paste ?(.*)"))
+@borg.on(events.NewMessage(pattern=r"\.paste ?(.*)",incoming=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -51,6 +51,6 @@ async def _(event):
     ms = (end - start).seconds
     if r["isUrl"]:
         nurl = f"https://del.dog/v/{r['key']}"
-        await event.edit("Dogged to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl))
+        await event.reply("Dogged to {} in {} seconds. GoTo Original URL: {}".format(url, ms, nurl))
     else:
-        await event.edit("`Pasted Successfully!..` \n[Here you Go]({})\n__Link Generated In__ **{}** __seconds__".format(url, ms))
+        await event.reply("`Pasted Successfully!..` \n[Here you Go]({})\n__Link Generated In__ **{}** __seconds__".format(url, ms))
