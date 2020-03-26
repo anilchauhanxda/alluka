@@ -1,11 +1,13 @@
-"""COMMAND : .gali"""
+"""COMMAND : .gali
+for sudo users
+"""
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd("gali"))
+@borg.on(admin_cmd("gali",allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
