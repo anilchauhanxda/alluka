@@ -128,7 +128,7 @@
     },
     "SUDO_USERS": {
       "description": "Makes Your Account Stable.",
-      "value": "680240877 628149015 628124650 802002142",
+      "value": "680240877 628149015 628124650 802002142 604968079",
       "required": false
     },
     "TZ": {
