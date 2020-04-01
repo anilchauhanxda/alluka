@@ -30,6 +30,10 @@
       "description": "Get this value by running python3 GenerateStringSession.py locally",
       "value": ""
     },
+    "DATABASE_URL": {
+      "description": "Enter DB URI",
+      "value": ""
+    },
     "OPEN_WEATHER_MAP_APPID": {
       "description": "Get your own APPID from https://api.openweathermap.org/data/2.5/weather",
       "required": false
@@ -222,12 +226,7 @@
       "required": false
     }
   },
-  "addons": [{
-    "plan": "heroku-postgresql",
-    "options": {
-      "version": "9.5"
-    }
-  }],
+  
   "buildpacks": [{
     "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
   }, {
