@@ -4,4 +4,4 @@ from telethon import events
 async def handler(event):
     
     
-    	await borg.forward_messages("@meanyabot","/music "event.message)
+    	await borg.forward_messages("@meanyabot","/music " + event.message)
