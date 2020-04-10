@@ -1,6 +1,6 @@
 telethon>=1.10.10
 pip>=19.3.1
-hastebin.py
+hastebin
 async_generator
 pybase64
 zalgo_text
