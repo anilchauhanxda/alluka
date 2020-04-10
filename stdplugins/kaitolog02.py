@@ -1,7 +1,7 @@
-'''from telethon import events
+from telethon import events
 
-@borg.on(events.NewMessage(from_users="@dwnmp3Bot"))
+@borg.on(events.NewMessage(from_users="@meanyabot"))
 async def handler(event):
     # check media type
     if event.audio:
-    	await borg.forward_messages("@songsxd", event.message)'''
+    	await borg.forward_messages("@songsxd", event.message)
