@@ -13,7 +13,7 @@ async def _(event):
         input_str = "http://" + input_str
     r = requests.get(input_str, allow_redirects=False)
     if str(r.status_code).startswith('3'):
-        send = await borg.send_message("@meanyabot", "{}".format(r.headers["Location"]))
+        send = await borg.send_message("@deezloadertcbot", "{}".format(r.headers["Location"]))
        # error="undefined"
         #if send = error
         #await event.reply("Not able to Found 😕/n{} ".format(input_str))
